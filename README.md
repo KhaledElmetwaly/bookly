@@ -1,7 +1,6 @@
 # bookly_app
 
-A new Flutter project.
-
+dart sdk 3.13.5
 ## Getting Started
 
 This project is a starting point for a Flutter application.
