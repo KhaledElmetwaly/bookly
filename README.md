@@ -3,9 +3,10 @@
 dart sdk 3.13.5
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+bookly app is application to read books 
 
 A few resources to get you started if this is your first Flutter project:
+
 
 - [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
 - [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
