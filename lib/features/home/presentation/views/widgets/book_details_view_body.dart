@@ -1,55 +1,37 @@
-import 'package:bookly_app/features/home/presentation/views/widgets/book_rate.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/book_details_section.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_book_details_appbar.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/similar_books_section.dart';
 import 'package:flutter/material.dart';
-
-import '../../../../../core/utils/styles.dart';
-import 'books_action.dart';
-import 'custom_book_item.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
   const BookDetailsViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
-    var screenWidth = MediaQuery.sizeOf(context).width;
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20.0),
-      child: Column(
-        children: [
-          const SafeArea(
-            child: BookDetailsCustomAppbar(),
+    return const CustomScrollView(
+      slivers: [
+        SliverFillRemaining(
+          hasScrollBody: false,
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 30),
+            child: Column(
+              children: [
+                CustomBookDetailsAppBar(),
+                BookDetailsSection(),
+                Expanded(
+                  child: SizedBox(
+                    height: 50,
+                  ),
+                ),
+                SimilarBooksSection(),
+                SizedBox(
+                  height: 40,
+                ),
+              ],
+            ),
           ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: screenWidth * .1),
-            child: const CustomBookImage(),
-          ),
-          const SizedBox(
-            height: 43,
-          ),
-          const Text(
-            "The joker (2019)",
-            style: Styles.textStyle30,
-          ),
-          const SizedBox(
-            height: 6,
-          ),
-          Text("The joker (2019)",
-              style: Styles.textStyle18.copyWith(
-                  color: Colors.white.withOpacity(.7),
-                  fontWeight: FontWeight.w400,
-                  fontStyle: FontStyle.italic)),
-          const SizedBox(
-            height: 16,
-          ),
-          const BookRate(
-            mainAxisAlignment: MainAxisAlignment.center,
-          ),
-          const SizedBox(
-            height: 37,
-          ),
-          const BooksAction()
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
