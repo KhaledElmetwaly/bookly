@@ -4,12 +4,19 @@ import 'package:bookly_app/features/home/domain_layer/entities/book_entity.dart'
 import 'package:bookly_app/features/home/domain_layer/repositories/home_repo.dart';
 import 'package:dartz/dartz.dart';
 
-class FetchFeturedBookUseCase {
+import '../../../core/use_cases/use_case.dart';
+
+class FetchFeturedBookUseCase extends UseCase<List<BookEntity>,NoParam> {
   final HomeRepo homeRepo;
   FetchFeturedBookUseCase(
     this.homeRepo,
   );
-  Future<Either<Failure, List<BookEntity>>> fetchFeaturedBooks() {
-    return homeRepo.fetchFeaturedBooks();
+  
+  @override
+  Future<Either<Failure, List<BookEntity>>> call([NoParam?param]) {
+    // TODO: implement call
+    throw UnimplementedError();
   }
+
 }
+
