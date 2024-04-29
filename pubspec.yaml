@@ -36,8 +36,12 @@ dependencies:
   font_awesome_icon_class: ^0.0.6
   go_router: null
   dio: 
+  hive: 
+  hive_flutter:
 dev_dependencies:
   flutter_lints: ^2.0.0
+  hive_generator:
+  build_runner: 
   flutter_test:
     sdk: flutter
 
