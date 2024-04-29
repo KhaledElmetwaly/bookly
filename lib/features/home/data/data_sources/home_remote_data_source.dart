@@ -1,8 +1,10 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 
+import 'package:bookly_app/core/constants.dart';
 import 'package:bookly_app/core/utils/api_service.dart';
 import 'package:bookly_app/features/home/data/models/book_model.dart';
 
+import '../../../../core/utils/functions/save_box.dart';
 import '../../domain_layer/entities/book_entity.dart';
 
 abstract class HomeRemoteDataSource {
@@ -20,6 +22,8 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
     var data = await apiService.get(
         endPoint: 'volumes?Filtering=free-ebooks&q=programming');
     List<BookEntity> books = getBooksList(data);
+    saveBoxData(books, kFeaturedBox);
+
     return books;
   }
 
@@ -38,6 +42,7 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
     var data = await apiService.get(
         endPoint: 'volumes?Filtering=free-ebooks&q=programming&sorting=newest');
     List<BookEntity> books = getBooksList(data);
+    saveBoxData(books, kNewestBox);
     return books;
   }
 }
