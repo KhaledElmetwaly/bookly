@@ -39,10 +39,9 @@ dependencies:
   hive: 
   hive_flutter:
   flutter_bloc:
-  bloc:
   equatable: ^2.0.5
   meta: ^1.9.1
-
+  get_it: 
 dev_dependencies:
   flutter_lints: ^2.0.0
   hive_generator:
