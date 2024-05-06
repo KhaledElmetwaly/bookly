@@ -9,13 +9,25 @@ abstract class FeaturedBooksState extends Equatable {
 }
 
 class FeaturedBooksInitial extends FeaturedBooksState {}
+
 class FeaturedBooksLoading extends FeaturedBooksState {}
+
+class FeaturedBooksPagginationLoading extends FeaturedBooksState {}
+
+class FeaturedBooksPagginationFailure extends FeaturedBooksState {
+  final String errorMessage;
+  const FeaturedBooksPagginationFailure({
+    required this.errorMessage,
+  });
+}
+
 class FeaturedBooksFailure extends FeaturedBooksState {
   final String errorMessage;
   const FeaturedBooksFailure(
-  this.errorMessage,
+    this.errorMessage,
   );
 }
+
 class FeaturedBooksSuccess extends FeaturedBooksState {
   final List<BookEntity> books;
   const FeaturedBooksSuccess(this.books);
